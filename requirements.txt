@@ -1,0 +1,15 @@
+pip install git+https://github.com/tinymanorg/tinyman-py-sdk.git
+pip install telegram-send
+
+To setup telegram bot follow these steps:
+1. Go to https://telegram.me/BotFather on your mobile device.
+2. It will open a new chat window in your telegram app.
+3. Type /start in the chat window.
+4. Then type /newbot
+5. Go ahead and name your bot. 
+6. Once the bot is created you will get an access token in the same chat window. 
+7. Go to python command prompt on your desktop where you will run the python script and type telegram-send --configure. You will get a password and a message that the bot is now ready. 
+8. Add a new contact in telegram app with your bot name and type in the password that you get in step 7. 
+9. Finally run the python script attached. 
+
+And thats it, you will get notifications now if the price of your asset breaches the threshold you have set! 
