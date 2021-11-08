@@ -1,6 +1,7 @@
 from tinyman.v1.pools import Pool
 from tinyman.v1.client import TinymanTestnetClient,TinymanMainnetClient
 import telegram_send
+import time
 
 client = TinymanMainnetClient()
 AKITA = client.fetch_asset(384303832) #Add asset Id of the ASA you would like to fetch. 
@@ -16,3 +17,4 @@ while(1):
     if (akita_algo_quote > 0.05) or (akita_algo_quote < 0.02):
         msg = "Alert! Price is "+ str(akita_algo_quote)
         telegram_send.send(messages=[msg])
+    time.sleep(180)
