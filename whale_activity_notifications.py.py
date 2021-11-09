@@ -10,9 +10,13 @@ while(1):
         if 'aamt' in trans['txn']:
             if trans['txn']['snd'] == address1:
                 if trans['txn']['aamt']>500000: # I consider any transactions more than 500000 a whale activity. Modify this number as required. 
-                    msg = "Bought " + str(trans['txn']['aamt']) + "Akitas"
-                    telegram_send.send(messages=[msg])
+                    if trans['txn']['arcv'] != amt:
+                        amt = trans['txn']['aamt']
+                        msg = "Bought " + str(trans['txn']['aamt']) + " Akitas"
+                        telegram_send.send(messages=[msg])
             if trans['txn']['arcv'] == address1:
                 if trans['txn']['aamt']>500000:
-                    msg = "Sold " + str(trans['txn']['aamt']) + "Akitas"
-                    telegram_send.send(messages=[msg])
+                    if trans['txn']['arcv'] != amt:
+                        amt = trans['txn']['aamt']
+                        msg = "Sold " + str(trans['txn']['aamt']) + " Akitas"
+                        telegram_send.send(messages=[msg])
